@@ -1,0 +1,68 @@
+<nav class="absolute top-6 right-6 z-20">
+  <a
+    [routerLink]="['/login']"
+    (click)="logout()"
+    class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-semibold"
+  >
+    Déconnexion
+  </a>
+</nav>
+
+
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col items-center justify-center text-center px-4 py-8 relative overflow-hidden">
+
+    <!-- Éléments décoratifs de fond -->
+    <div class="absolute top-10 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+    <div class="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-3xl relative z-10">
+
+      <!-- Badge animé -->
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg mb-8 border border-blue-100 hover:scale-105 transition-transform duration-300">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+        </span>
+        <span class="text-sm font-medium text-gray-700">XANADU</span>
+      </div>
+
+      <!-- Titre principal avec gradient -->
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient leading-tight">
+        <p>Bienvenue {{ currentUser()?.fullName }}</p>
+      </h1>
+
+      <!-- Sous-titre -->
+      <p class="text-gray-600 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
+        ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi,
+        non fermentum diam nisl sit amet erat.
+      </p>
+
+      <!-- Fonctionnalités -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
+          <div class="text-4xl mb-3">#</div>
+          <h3 class="font-bold text-gray-800 mb-2">Mes documents</h3>
+          <p class="text-sm text-gray-600">Espace personnel</p>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
+          <div class="text-4xl mb-3">#</div>
+          <h3 class="font-bold text-gray-800 mb-2">Documents de service</h3>
+          <p class="text-sm text-gray-600">Espace service</p>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20">
+          <div class="text-4xl mb-3">#</div>
+          <h3 class="font-bold text-gray-800 mb-2">Document entreprise</h3>
+          <p class="text-sm text-gray-600">Espace général</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-sm text-gray-500 relative z-10 bg-white/40 backdrop-blur-sm px-6 py-3 rounded-full">
+      © 2025 - Xanadu CESITECH
+    </footer>
+  </div>
+
+<router-outlet />
